@@ -1,0 +1,162 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root{
+    --background-color: #F7F7F7;
+    --chat-background-color: #F7F7F7;
+    --aqua-color: #6CDDC9;
+    --text-color: #263238;
+    --selected-item-color: #CACACA;
+    --items-color: #D9D9D9;
+    --border-color: #383838;
+    --text-button-color: #263238;
+    --default-color: #D9D9D9;
+}
+
+body.dark-theme {
+    --background-color: #383838;
+    --chat-background-color: #263238;
+    --aqua-color: #6CDDC9;
+    --text-color: #D9D9D9;
+    --selected-item-color: #656565;
+    --items-color: #535353;
+    --border-color: #D9D9D9;
+}
+
+
+.background-svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1008" height="749" viewBox="0 0 1008 749" fill="none"><path d="M659.5 -123C767.5 -62.3333 963.5 97.2 883.5 250C783.5 441 404.5 594 584 871.5C763.5 1149 1008 871.5 1008 1184.5L-75.5 1144.5L-102 -123H659.5Z" fill="%236CDDC9"/></svg>');
+    width: 1008px; /* Ancho del SVG */
+    height: 749px; /* Alto del SVG */
+}
+
+.theme-icon {
+    width: 1em; /* Tamaño del icono */
+    height: 1em; /* Tamaño del icono */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.theme-icon .svg-path {
+    fill: transparent; /* Cambia el color de relleno a transparente */
+    stroke: var(--text-color); /* Mantén el color de contorno original */
+}
+
+.color-white {
+    background-color:#F7F7F7 ;
+}
+
+.color-aqua {
+    background-color: #6CDDC9;
+}
+
+.color-light-gray {
+    background-color: #D9D9D9;
+}
+
+.color-gray {
+    background-color: #CACACA;
+}
+
+.color-medium-gray {
+    background-color: #535353;
+}
+
+.color-medium-light-gray {
+    background-color: #656565;
+}
+
+.color-dark-gray {
+    background-color: #383838;
+}
+
+.color-dark-blue {
+    background-color: #263238;
+}
+
+.titulo {
+    font-family: Jomhuria, serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 96px;
+    color: var(--text-color);
+}
+
+.encabezado1{
+    font-family: Jomhuria, serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 64px;
+    color: var(--text-color);
+}
+
+.encabezado2{
+    font-family: JejuGothic, serif;
+    letter-spacing: -1px;
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.texto{
+    font-family: JejuGothic, serif;
+    letter-spacing: -1px;
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+.texto-destacado1{
+    color: var(--chat-background-color);
+}
+
+.texto-boton-destacado{
+    color: var(--text-button-color);
+}
+
+.item-sala{
+    background-color: var(--items-color);
+}
+
+.item-sala-selected{
+    background-color: var(--selected-item-color);
+}
+
+.background-aqua{
+    background-color: var(--aqua-color);
+}
+
+.form-field{
+    background-color: var(--items-color);
+}
+
+.hidden{
+    display: none;
+}
+
+.background-transparent{
+    background-color: transparent;
+}
+
+.background{
+    background-color: var(--background-color);
+}
+
+.background-chat{
+    background-color: var(--chat-background-color);
+}
+
+.background-profile{
+    background-color: var(--default-color);
+}
+
+.boton-enviar{
+    width: 4em;
+    height: 3em;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}

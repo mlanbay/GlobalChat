@@ -1,0 +1,26 @@
+<change-theme-button></change-theme-button>
+<div class="col-sm-12 col-md-6 offset-md-6 background-transparent">
+
+    <form method="post" class="background-transparent" novalidate #loginForm="ngForm" >
+        <div class="col-sm-6 offset-sm-3 col-md-6 background-transparent">
+            <label for="email" class="form-label  encabezado2">Email</label>
+            <input type="email" #email="ngModel" name="email" [(ngModel)]="userLogin.email" class="form-control texto form-field" id="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$">
+            
+            <div *ngIf="email.invalid && (email.touched || email.dirty) || isFormSubmited">
+                <span *ngIf="email.errors?.['required']" class="form-text texto">Este campo es obligatorio</span>
+                <span *ngIf="email.errors?.['pattern']" class="form-text texto">Introduce un email valido</span>
+            </div>
+        </div>
+        <div class="col-sm-6 offset-sm-3 col-md-6 background-transparent">
+            <label for="password" class="form-label  encabezado2" >Password</label>
+            <input type="password" #password="ngModel" name="password" [(ngModel)]="userLogin.password" class="form-control texto form-field" id="password" required minlength="8">
+            <div *ngIf="password.invalid && (password.touched || password.dirty)  || isFormSubmited">
+                <span *ngIf="password.errors?.['required']" class="form-text texto">Este campo es obligatorio</span>
+                <span *ngIf="password.errors?.['minlength']" class="form-text texto">Contraseña incorrecta</span>
+            </div>
+            
+        </div>
+        <button (click)="onSubmit(loginForm)" [disabled]="!loginForm.form.valid" class="col-sm-6 offset-sm-3 col-md-6 btn background-aqua encabezado1 texto-boton-destacado">Iniciar Sesion</button>
+    </form>
+
+</div>

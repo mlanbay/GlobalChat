@@ -1,0 +1,35 @@
+<div class="modal fade" id="CrearSalaModal" tabindex="-1" aria-labelledby="CrearSalaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content background">
+        <div class="modal-header">
+          <h5 class="modal-title" id="CrearSalaModalLabel">Crear Sala</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <nav class="navbar">
+            <div class="container-fluid justify-content-start">
+              <button id="CrearSalaPublica"
+                      class="btn me-2"
+                      [ngClass]="showPublica ? 'btn-outline-success' : 'btn-outline-secondary'"
+                      (click)="ShowFormCrearSalaPublica()">
+                Sala Publica
+              </button>
+              <button id="CrearSalaPrivada"
+                      class="btn"
+                      [ngClass]="showPublica ? 'btn-outline-secondary' : 'btn-outline-success'"
+                      (click)="ShowFormCrearSalaPrivada()">
+                Sala Privada
+              </button>
+            </div>
+          </nav>
+          <div [ngClass]="{'d-block': showPublica, 'd-none': !showPublica}">
+            <form-crear-sala-publica></form-crear-sala-publica>
+          </div>
+          <div [ngClass]="{'d-block': !showPublica, 'd-none': showPublica}">
+            <form-crear-sala-privada></form-crear-sala-privada>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

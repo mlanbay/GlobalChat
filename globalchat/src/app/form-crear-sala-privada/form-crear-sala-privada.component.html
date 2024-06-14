@@ -1,0 +1,22 @@
+<div>
+    <form method="post" novalidate #CrearSalaPrivadaForm="ngForm">
+        <label class="form-label" for="email">Nombre de la Sala</label>
+        <input class="form-control" #nombre="ngModel" name="nombre" [(ngModel)]="crearSalaPrivada.nombre" type="nombre" id="nombre" required>
+        <div *ngIf="nombre.invalid && (nombre.touched || nombre.dirty) || isFormSubmited">
+            <span *ngIf="nombre.errors?.['required']" class="form-text texto">Este campo es obligatorio</span>
+        </div>
+
+        <label class="form-label" for="descripcion">Descripcion</label>
+        <input class="form-control" #descripcion="ngModel" name="descripcion" [(ngModel)]="crearSalaPrivada.descripcion" type="text" id="descripcion" >
+
+        <label class="form-label" for="password">Password</label>
+        <input class="form-control"  #password="ngModel" name="password" [(ngModel)]="crearSalaPrivada.password" type="password" id="password" required>
+        <div *ngIf="password.invalid && (password.touched || password.dirty) || isFormSubmited">
+            <span *ngIf="password.errors?.['required']" class="form-text texto">Este campo es obligatorio</span>
+        </div>
+        
+        <check-topics-list></check-topics-list>
+
+        <button (click)="onSubmit(CrearSalaPrivadaForm)" class="btn color-aqua m-5">Guardar</button>
+    </form>
+</div>

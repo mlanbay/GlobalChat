@@ -1,0 +1,58 @@
+<change-theme-button></change-theme-button>
+<div class="col-sm-12 col-md-6 offset-md-6">
+    <form method="post" novalidate #registerForm="ngForm" >
+        <div class="col-sm-6 offset-sm-3 col-md-6">
+            <label for="email" class="form-label encabezado2">Email</label>
+            <input type="email" id="email" #email="ngModel" name="email" [(ngModel)]="userRegister.email" class="form-control texto form-field" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$">
+            <div *ngIf="email.invalid && (email.touched || email.dirty) || isFormSubmited">
+                <span *ngIf="email.errors?.['required']" class="form-text texto">Este campo es obligatorio</span>
+                <span *ngIf="email.errors?.['pattern']" class="form-text texto">Introduce un email valido</span>
+            </div>
+        </div>
+
+        <div class="col-sm-6 offset-sm-3 col-md-6">
+            <label for="username" class="form-label encabezado2"> Username</label>
+            <input type="text" #username="ngModel" name="username" [(ngModel)]="userRegister.username" id="username" class="form-control texto form-field" required minlength="5" >
+            <div *ngIf="username.invalid && (username.touched || username.dirty)  || isFormSubmited">
+                <span *ngIf="username.errors?.['required']" class="form-text texto">Este campo es obligatorio</span>
+                <span *ngIf="username.errors?.['minlength']" class="form-text texto">El nombre de usuario debe de ser mayor a 5</span>
+            </div>
+        </div>
+
+        <div class="col-sm-6 offset-sm-3 col-md-6">
+            <label for="nombre" class="form-label encabezado2"> Nombre</label>
+            <input type="text" id="nombre" #nombre="ngModel" name="nombre" [(ngModel)]="userRegister.nombre" class="form-control texto form-field" required>
+            <div *ngIf="nombre.invalid && (nombre.touched || nombre.dirty)  || isFormSubmited">
+                <span *ngIf="nombre.errors?.['required']" class="form-text texto">Este campo es obligatorio</span>
+            </div>
+        </div>
+
+        <div class="col-sm-6 offset-sm-3 col-md-6">
+            <label for="apellidos" class="form-label encabezado2"> Apellidos</label>
+            <input type="text" id="apellidos" #apellidos="ngModel" name="apellidos" [(ngModel)]="userRegister.apellidos" class="form-control texto form-field" required>
+            <div *ngIf="apellidos.invalid && (apellidos.touched || apellidos.dirty)  || isFormSubmited">
+                <span *ngIf="apellidos.errors?.['required']" class="form-text texto">Este campo es obligatorio</span>
+            </div>
+        </div>
+
+        <div class="col-sm-6 offset-sm-3 col-md-6">
+            <label for="password" class="form-label encabezado2">Password</label>
+            <input type="password" #password="ngModel" name="password" [(ngModel)]="userRegister.password" class="form-control texto form-field" id="password" required minlength="8">
+            <div *ngIf="password.invalid && (password.touched || password.dirty)  || isFormSubmited">
+                <span *ngIf="password.errors?.['required']" class="form-text texto">Este campo es obligatorio</span>
+                <span *ngIf="password.errors?.['minlength']" class="form-text texto">Contraseña incorrecta</span>
+            </div>
+        </div>
+        <div class="col-sm-6 offset-sm-3 col-md-6">
+            <label for="ConfirmPassword" class="form-label encabezado2 ">ConfirmPassword</label>
+            <input type="password" id="ConfirmPassword" #confirmPassword="ngModel" name="corfirmPassword" [(ngModel)]="userRegister.confirmPassword" class="form-control texto form-field " required minlength="8">
+            <div *ngIf="confirmPassword.invalid && (confirmPassword.touched || confirmPassword.dirty)  || isFormSubmited">
+                <span *ngIf="confirmPassword.errors?.['required']" class="form-text texto">Este campo es obligatorio</span>
+                <span *ngIf="confirmPassword.errors?.['minlength']" class="form-text texto">Contraseña incorrecta</span>
+            </div>
+        </div>
+
+
+        <button (click)="onSubmit(registerForm)" [disabled]="!registerForm.form.valid" class="col-sm-6 offset-sm-3 col-md-6 btn background-aqua encabezado1 texto-boton-destacado">Enviar</button>
+    </form>
+</div>

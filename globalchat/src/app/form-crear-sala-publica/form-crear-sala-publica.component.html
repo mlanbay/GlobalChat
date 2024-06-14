@@ -1,0 +1,15 @@
+<div>
+    <form method="post"  novalidate #CrearSalaPublicaForm="ngForm">
+        <label class="form-label" for="nombreSala">Nombre de la Sala</label>
+        <input class="form-control" #nombre="ngModel" name="nombre" [(ngModel)]="crearSalaPublica.nombre" type="text" id="nombreSala">
+        <span class="form-text">Mensaje de error</span>
+
+        <label class="form-label" for="descripcion">Descripcion</label>
+        <input class="form-control" #descripcion="ngModel" name="descripcion" [(ngModel)]="crearSalaPublica.descripcion" type="text" id="descripcion">
+        <span class="form-text">Mensaje de error</span>
+
+        <check-topics-list></check-topics-list>
+
+        <button (click)="onSubmit(CrearSalaPublicaForm)" class="btn color-aqua m-5">Guardar</button>
+    </form>
+</div>

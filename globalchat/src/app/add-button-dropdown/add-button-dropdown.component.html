@@ -1,0 +1,26 @@
+<div class="dropdown justify-content-center ">
+    <button style="width: 3.5em; height: 3.5em"
+            class="btn rounded-circle background-aqua texto-boton-destacado p-2 m-4 dropdown-toggle " type="button"
+            data-bs-toggle="dropdown" aria-expanded="false">+
+    </button>
+
+    <ul class="dropdown-menu background" aria-labelledby="dropdownMenuButton">
+        <li>
+            <button class="dropdown-item btn item-sala" type="button" data-bs-toggle="modal"
+                    data-bs-target="#CrearSalaModal">Crear Sala
+            </button>
+        </li>
+        <li>
+            <button class="dropdown-item btn item-sala" type="button" data-bs-toggle="modal"
+                data-bs-target="#ListaSalaModal">Buscar sala</button>
+        </li>
+        <li>
+            <button class="dropdown-item btn item-sala" type="button" data-bs-toggle="modal"
+                data-bs-target="#ListaModeradores">Lista de Moderadores</button>
+        </li>
+    </ul>
+
+    <modal-crear-sala></modal-crear-sala>
+    <modal-listar-salas></modal-listar-salas>
+    
+</div>
